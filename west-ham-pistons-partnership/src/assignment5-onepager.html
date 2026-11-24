@@ -14,8 +14,19 @@
   table { font-size: 8.3pt; margin: 0 0 1.5mm 0; }
   th { padding: 1.4mm 2mm; }
   td { padding: 1.3mm 2mm; }
-  .m td.rh { background: var(--claret-soft) !important; font-weight: 650; width: 16%; }
-  .m td, .m th { width: 28%; }
+  /* Matrix reproduced from the Assignment 5 template */
+  table.tpl { border-collapse: separate; border-spacing: 1.2px; margin: 1mm 0 1mm 0; }
+  table.tpl td { border: none; vertical-align: middle; }
+  table.tpl tbody tr:nth-child(even) td { background: none; }
+  table.tpl td.blank { background: #fff !important; }
+  table.tpl td.cf { background: #0d56a6 !important; color: #fff; font-weight: 700; font-size: 10.5pt; text-align: center; padding: 1.8mm; }
+  table.tpl td.cn { background: #0d56a6 !important; color: #fff; font-size: 10pt; text-align: center; padding: 1.2mm; width: 26.5%; }
+  table.tpl td.if { background: #84bd2b !important; color: #fff; font-weight: 700; font-size: 10.5pt; text-align: center; width: 7%; padding: 1mm; }
+  table.tpl td.if span { writing-mode: vertical-rl; transform: rotate(180deg); display: inline-block; white-space: nowrap; }
+  table.tpl td.in { background: #84bd2b !important; color: #fff; font-size: 10pt; text-align: center; width: 6%; }
+  table.tpl td.c1 { background: #e7e9f0 !important; padding: 2mm 2.2mm; vertical-align: top; }
+  table.tpl td.c2 { background: #cdd3e3 !important; padding: 2mm 2.2mm; vertical-align: top; }
+  .legend { font-size: 7.7pt; color: var(--muted); margin: 0 0 1.5mm 0; }
   .s { font-weight: 700; color: var(--claret); }
   .s.mod { color: var(--muted); }
   ul.k { margin: 1mm 0 0 0; padding-left: 4.5mm; }
@@ -35,30 +46,32 @@
 <table>
   <thead><tr><th style="width:50%">Contextual factors</th><th class="pistons">Individual factors (sporting manager)</th></tr></thead>
   <tbody>
-    <tr><td><strong>C1 Promotion/relegation pressure.</strong> Relegated in 2026, less income, a short window to bounce back</td><td><strong>I1 Risk attitude.</strong> After a loss, people take bigger risks (prospect theory)</td></tr>
-    <tr><td><strong>C2 Rivalry and media scrutiny.</strong> Millwall and the London derbies; risk of leaks</td><td><strong>I2 Moral standards / ethical leadership.</strong> “Win at all costs” vs. being a moral person, moral manager and moral entrepreneur</td></tr>
-    <tr><td><strong>C3 Governance.</strong> Concentrated ownership, four head coaches since 2024, unclear accountability</td><td><strong>I3 Education and term of office.</strong> Education helps; term of office helps at first, then hurts (Wulf &amp; Hungenberg, 2006)</td></tr>
+    <tr><td><strong>1 Promotion/relegation pressure.</strong> Relegated in 2026, less income, a short window to bounce back</td><td><strong>1 Risk attitude.</strong> After a loss, people take bigger risks (prospect theory)</td></tr>
+    <tr><td><strong>2 Rivalry and media scrutiny.</strong> Millwall and the London derbies; risk of leaks</td><td><strong>2 Moral standards / ethical leadership.</strong> “Win at all costs” vs. being a moral person, moral manager and moral entrepreneur</td></tr>
+    <tr><td><strong>3 Governance.</strong> Concentrated ownership, four head coaches since 2024, unclear accountability</td><td><strong>3 Education and term of office.</strong> Education helps; term of office helps at first, then hurts (Wulf &amp; Hungenberg, 2006)</td></tr>
   </tbody>
 </table>
 
 <h2>2) Matrix: how the factors interact and affect performance</h2>
-<table class="m">
-  <thead><tr><th style="width:16%"></th><th>C1 Relegation pressure</th><th>C2 Rivalry &amp; media</th><th>C3 Governance</th></tr></thead>
+<table class="tpl">
   <tbody>
-    <tr><td class="rh">I1 Risk</td>
-      <td><span class="s">Strong:</span> pushes managers to overspend for promotion, with a risk of financial distress</td>
-      <td><span class="s mod">Moderate:</span> emotional decisions such as sackings and panic signings</td>
-      <td><span class="s">Strong:</span> governance puts a brake on risky decisions</td></tr>
-    <tr><td class="rh">I2 Ethics</td>
-      <td><span class="s">Strong:</span> rushed returns from injury, any sponsor (betting sponsor kept)</td>
-      <td><span class="s">Strong:</span> rivalry increases rule-breaking (Kilduff et al., 2016) and leaks</td>
-      <td><span class="s">Strong:</span> governance and ethical leadership reinforce each other</td></tr>
-    <tr><td class="rh">I3 Education / term</td>
-      <td><span class="s mod">Moderate:</span> better planning vs. a board that resists change</td>
-      <td><span class="s mod">Moderate:</span> experience helps handle pressure</td>
-      <td><span class="s">Strong:</span> governance decides who is appointed and for how long</td></tr>
+    <tr><td class="blank"></td><td class="blank"></td><td class="cf" colspan="3">Contextual factors</td></tr>
+    <tr><td class="blank"></td><td class="blank"></td><td class="cn">1</td><td class="cn">2</td><td class="cn">3</td></tr>
+    <tr><td class="if" rowspan="3"><span>Individual factors</span></td><td class="in">1</td>
+      <td class="c1"><span class="s">Strong:</span> pushes managers to overspend for promotion, with a risk of financial distress</td>
+      <td class="c1"><span class="s mod">Moderate:</span> emotional decisions such as sackings and panic signings</td>
+      <td class="c1"><span class="s">Strong:</span> governance puts a brake on risky decisions</td></tr>
+    <tr><td class="in">2</td>
+      <td class="c2"><span class="s">Strong:</span> rushed returns from injury, any sponsor (betting sponsor kept)</td>
+      <td class="c2"><span class="s">Strong:</span> rivalry increases rule-breaking (Kilduff et al., 2016) and leaks</td>
+      <td class="c2"><span class="s">Strong:</span> governance and ethical leadership reinforce each other</td></tr>
+    <tr><td class="in">3</td>
+      <td class="c1"><span class="s mod">Moderate:</span> better planning vs. a board that resists change</td>
+      <td class="c1"><span class="s mod">Moderate:</span> experience helps handle pressure</td>
+      <td class="c1"><span class="s">Strong:</span> governance decides who is appointed and for how long</td></tr>
   </tbody>
 </table>
+<p class="legend">Contextual factors: 1 = promotion/relegation pressure · 2 = rivalry and media scrutiny · 3 = governance &nbsp;|&nbsp; Individual factors: 1 = risk attitude · 2 = moral standards / ethical leadership · 3 = education and term of office</p>
 <p><strong>Key findings:</strong></p>
 <ul class="k">
   <li><strong>Context raises the pressure.</strong> Relegation, rivalry and the media push managers towards cutting corners.</li>
