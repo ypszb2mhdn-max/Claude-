@@ -1,0 +1,265 @@
+:root {
+  --claret: #7a263a;
+  --claret-soft: #f5ecef;
+  --blue: #1b8fc2;
+  --blue-soft: #e8f4fa;
+  --pistons: #1d42ba;
+  --ink: #1d1d22;
+  --muted: #5d5d68;
+  --line: #ddd6d9;
+  --bg: #ffffff;
+  --good: #2e7d4f;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 17mm 20mm 17mm;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", "DejaVu Sans", sans-serif;
+  font-size: 9.6pt;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ---------- Cover ---------- */
+.cover {
+  height: 257mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  break-after: page;
+  padding: 4mm 0 0 0;
+}
+.cover .kicker {
+  font-size: 9pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--claret);
+  font-weight: 600;
+}
+.cover h1 {
+  font-family: "Inter Display", "Inter", sans-serif;
+  font-size: 40pt;
+  line-height: 1.05;
+  margin: 10mm 0 4mm 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.cover h1 .amp { color: var(--claret); }
+.cover .subtitle {
+  font-size: 15pt;
+  color: var(--muted);
+  max-width: 150mm;
+  line-height: 1.35;
+}
+.cover .bar {
+  height: 4px;
+  width: 60mm;
+  background: linear-gradient(90deg, var(--claret) 0 50%, var(--pistons) 50% 100%);
+  margin: 9mm 0;
+}
+.cover .tagline {
+  font-size: 12pt;
+  font-style: italic;
+  color: var(--ink);
+}
+.cover .meta {
+  border-top: 1px solid var(--line);
+  padding-top: 5mm;
+  font-size: 9.5pt;
+  color: var(--muted);
+  display: grid;
+  grid-template-columns: 38mm 1fr;
+  row-gap: 1.5mm;
+}
+.cover .meta b { color: var(--ink); font-weight: 600; }
+.placeholder { background: #fff3b0; padding: 0 4px; color: var(--ink); }
+
+/* ---------- Headings ---------- */
+h2 {
+  font-family: "Inter Display", "Inter", sans-serif;
+  font-size: 16pt;
+  font-weight: 750;
+  color: var(--claret);
+  margin: 9mm 0 3mm 0;
+  letter-spacing: -0.01em;
+  break-after: avoid;
+}
+h2 .num {
+  color: var(--muted);
+  font-weight: 500;
+  margin-right: 2mm;
+}
+h3 {
+  font-size: 11pt;
+  font-weight: 700;
+  margin: 5mm 0 1.5mm 0;
+  break-after: avoid;
+}
+h2.first { margin-top: 0; }
+.page-break { break-before: page; }
+
+p { margin: 0 0 2.4mm 0; }
+ul, ol { margin: 0 0 2.6mm 0; padding-left: 5mm; }
+li { margin-bottom: 1mm; }
+strong { font-weight: 650; }
+.muted { color: var(--muted); }
+.small { font-size: 8.4pt; }
+
+/* ---------- Boxes ---------- */
+.summary {
+  background: var(--claret-soft);
+  border-left: 4px solid var(--claret);
+  padding: 4mm 5mm;
+  margin: 2mm 0 4mm 0;
+  break-inside: avoid;
+}
+.summary p:last-child, .note p:last-child { margin-bottom: 0; }
+.note {
+  background: var(--blue-soft);
+  border-left: 4px solid var(--blue);
+  padding: 3mm 4.5mm;
+  margin: 3mm 0;
+  font-size: 9pt;
+  break-inside: avoid;
+}
+.note .label, .summary .label {
+  font-size: 7.8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 1mm;
+}
+.summary .label { color: var(--claret); }
+
+.quote {
+  font-family: "Inter Display", "Inter", sans-serif;
+  font-size: 12.5pt;
+  font-style: italic;
+  border-left: 4px solid var(--pistons);
+  padding: 2mm 0 2mm 5mm;
+  margin: 4mm 0;
+  color: var(--ink);
+  break-inside: avoid;
+}
+
+/* ---------- Pillars ---------- */
+.pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.5mm;
+  margin: 3mm 0 4mm 0;
+}
+.pillar {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--claret);
+  padding: 3mm 3.5mm;
+  font-size: 8.7pt;
+  break-inside: avoid;
+}
+.pillar.p2 { border-top-color: var(--pistons); }
+.pillar.p3 { border-top-color: var(--blue); }
+.pillar h4 {
+  margin: 0 0 1mm 0;
+  font-size: 10pt;
+}
+.pillar .tag {
+  font-size: 7.4pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.pillar ul { padding-left: 4mm; margin: 1.5mm 0 0 0; }
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2mm 0 4mm 0;
+  font-size: 8.6pt;
+  line-height: 1.4;
+}
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th {
+  background: var(--claret);
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+  padding: 1.8mm 2.2mm;
+  vertical-align: bottom;
+}
+th.pistons { background: var(--pistons); }
+td {
+  border-bottom: 1px solid var(--line);
+  padding: 1.7mm 2.2mm;
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td { background: #faf8f9; }
+td.c, th.c { text-align: center; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.winner td { background: #eef3ff !important; font-weight: 650; }
+tr.total td { font-weight: 700; border-top: 2px solid var(--ink); }
+.caption {
+  font-size: 8pt;
+  color: var(--muted);
+  margin-top: -2.5mm;
+  margin-bottom: 4mm;
+}
+.tick { color: var(--good); font-weight: 700; }
+.cross { color: #b3261e; font-weight: 700; }
+
+/* ---------- References ---------- */
+.refs { font-size: 8.2pt; line-height: 1.45; }
+.refs p { margin-bottom: 1.6mm; padding-left: 6mm; text-indent: -6mm; }
+.refs a { color: var(--pistons); text-decoration: none; word-break: break-all; }
+
+/* ---------- Script specific ---------- */
+.scene {
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--claret);
+  padding: 3.5mm 4.5mm;
+  margin: 0 0 4mm 0;
+  break-inside: avoid;
+}
+.scene.alt { border-left-color: var(--pistons); }
+.scene-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5mm;
+}
+.scene-head .t {
+  font-weight: 700;
+  font-size: 10.5pt;
+}
+.scene-head .time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--claret);
+  font-size: 9pt;
+}
+.visual {
+  font-size: 8.4pt;
+  color: var(--muted);
+  margin-bottom: 2mm;
+}
+.visual b { color: var(--blue); font-weight: 650; text-transform: uppercase; letter-spacing: 0.06em; font-size: 7.6pt; }
+.say {
+  font-size: 10.6pt;
+  line-height: 1.6;
+}
+.say p { margin-bottom: 2mm; }
+
+table.keep { break-inside: avoid; }
