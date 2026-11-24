@@ -10,6 +10,7 @@ const docs = [
   { src: 'analysis.html', out: 'WestHam_x_Pistons_Partnership_Analysis.pdf', footer: 'West Ham United × Detroit Pistons · Partnership Analysis' },
   { src: 'video-script.html', out: 'WestHam_x_Pistons_Video_Script.pdf', footer: 'West Ham United × Detroit Pistons · Video Script' },
   { src: 'ethics-assignment.html', out: 'WestHam_Ethics_Governance_Leadership.pdf', footer: 'West Ham United · Ethics, Governance and Leadership' },
+  { src: 'assignment5-onepager.html', out: 'WestHam_Assignment5_OnePage.pdf', footer: 'West Ham United · Assignment 5' },
 ];
 
 (async () => {
