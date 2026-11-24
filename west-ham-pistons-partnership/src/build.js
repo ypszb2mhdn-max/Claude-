@@ -5,15 +5,17 @@ const path = require('path');
 
 const outDir = path.resolve(process.argv[2] || path.join(__dirname, '..'));
 
+const only = process.argv[3];
 const docs = [
   { src: 'analysis.html', out: 'WestHam_x_Pistons_Partnership_Analysis.pdf', footer: 'West Ham United × Detroit Pistons · Partnership Analysis' },
   { src: 'video-script.html', out: 'WestHam_x_Pistons_Video_Script.pdf', footer: 'West Ham United × Detroit Pistons · Video Script' },
+  { src: 'ethics-assignment.html', out: 'WestHam_Ethics_Governance_Leadership.pdf', footer: 'West Ham United · Ethics, Governance and Leadership' },
 ];
 
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  for (const d of docs) {
+  for (const d of docs.filter(x => !only || x.src === only)) {
     await page.goto('file://' + path.join(__dirname, d.src), { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     await page.pdf({
